@@ -1,4 +1,0 @@
-AR universal_shift behavioral C:/Xilinx/Universal_Shift_Register/Universal_Shift.vhd sub00/vhpl01 1790748667
-AR universal_shift_tb_vhd behavior C:/Xilinx/Universal_Shift_Register/Universal_Shift_tb.vhd sub00/vhpl03 1790748669
-EN universal_shift NULL C:/Xilinx/Universal_Shift_Register/Universal_Shift.vhd sub00/vhpl00 1790748666
-EN universal_shift_tb_vhd NULL C:/Xilinx/Universal_Shift_Register/Universal_Shift_tb.vhd sub00/vhpl02 1790748668
