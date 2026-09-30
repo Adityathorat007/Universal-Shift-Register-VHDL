@@ -1,0 +1,20 @@
+Release 8.1i ngdbuild I.24
+Copyright (c) 1995-2005 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd _ngo -i -p acr2 Universal_Shift.ngc
+Universal_Shift.ngd 
+
+Reading NGO file 'C:/Xilinx/Universal_Shift_Register/Universal_Shift.ngc' ...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 113040 kilobytes
+
+Writing NGD file "Universal_Shift.ngd" ...
+
+Writing NGDBUILD log file "Universal_Shift.bld"...

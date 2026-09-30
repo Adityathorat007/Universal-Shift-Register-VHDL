@@ -1,0 +1,91 @@
+MDF Database:  version 1.0
+MDF_INFO | Universal_Shift | XA2C32A-6-VQ44
+MACROCELL | 0 | 0 | Q<0>_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 1 | 0 | 0
+INPUTS | 6 | S1  | S0  | Parallel_in<0>  | Serial_in  | Q<1>  | Q<0>
+INPUTMC | 2 | 0 | 2 | 0 | 0
+INPUTP | 4 | 34 | 38 | 43 | 33
+EQ | 6 | 
+   Q<0> := S1 & S0 & Parallel_in<0>
+	# S1 & !S0 & Serial_in
+	# !S1 & S0 & Q<1>
+	# !S1 & !S0 & Q<0>;	// (4 pt, 6 inp)
+   Q<0>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+   Q<0>.AR = reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk | 4 | reset
+
+MACROCELL | 0 | 2 | Q<1>_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 4 | 0 | 1 | 0 | 3 | 0 | 2 | 0 | 0
+INPUTS | 6 | S1  | S0  | Parallel_in<1>  | Serial_out  | Q<2>  | Q<1>
+INPUTMC | 3 | 0 | 1 | 0 | 3 | 0 | 2
+INPUTP | 3 | 34 | 38 | 42
+EQ | 6 | 
+   Q<1> := S1 & S0 & Parallel_in<1>
+	# S1 & !S0 & Serial_out
+	# !S1 & S0 & Q<2>
+	# !S1 & !S0 & Q<1>;	// (4 pt, 6 inp)
+   Q<1>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+   Q<1>.AR = reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk | 4 | reset
+
+MACROCELL | 0 | 1 | Serial_out_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 2 | 0 | 1 | 0 | 2
+INPUTS | 6 | S1  | S0  | Parallel_in<0>  | Serial_in  | Q<1>  | Serial_out
+INPUTMC | 2 | 0 | 2 | 0 | 1
+INPUTP | 4 | 34 | 38 | 43 | 33
+EQ | 6 | 
+   Serial_out := S1 & S0 & Parallel_in<0>
+	# S1 & !S0 & Serial_in
+	# !S1 & S0 & Q<1>
+	# !S1 & !S0 & Serial_out;	// (4 pt, 6 inp)
+   Serial_out.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+   Serial_out.AR = reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk | 4 | reset
+
+MACROCELL | 0 | 3 | Q<2>_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 3 | 0 | 4 | 0 | 3 | 0 | 2
+INPUTS | 6 | S1  | S0  | Parallel_in<2>  | Q<1>  | Q<3>  | Q<2>
+INPUTMC | 3 | 0 | 2 | 0 | 4 | 0 | 3
+INPUTP | 3 | 34 | 38 | 40
+EQ | 6 | 
+   Q<2> := S1 & S0 & Parallel_in<2>
+	# S1 & !S0 & Q<1>
+	# !S1 & S0 & Q<3>
+	# !S1 & !S0 & Q<2>;	// (4 pt, 6 inp)
+   Q<2>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+   Q<2>.AR = reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk | 4 | reset
+
+MACROCELL | 0 | 4 | Q<3>_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 2 | 0 | 4 | 0 | 3
+INPUTS | 6 | S1  | S0  | Parallel_in<3>  | Q<2>  | Serial_in  | Q<3>
+INPUTMC | 2 | 0 | 3 | 0 | 4
+INPUTP | 4 | 34 | 38 | 39 | 33
+EQ | 6 | 
+   Q<3> := S1 & S0 & Parallel_in<3>
+	# S1 & !S0 & Q<2>
+	# !S1 & S0 & Serial_in
+	# !S1 & !S0 & Q<3>;	// (4 pt, 6 inp)
+   Q<3>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+   Q<3>.AR = reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk | 4 | reset
+
+PIN | Parallel_in<0> | 64 | 16 | LVCMOS18 | 43 | 2 | 0 | 1 | 0 | 0
+PIN | Parallel_in<1> | 64 | 16 | LVCMOS18 | 42 | 1 | 0 | 2
+PIN | Parallel_in<2> | 64 | 16 | LVCMOS18 | 40 | 1 | 0 | 3
+PIN | Parallel_in<3> | 64 | 16 | LVCMOS18 | 39 | 1 | 0 | 4
+PIN | S1 | 64 | 16 | LVCMOS18 | 34 | 5 | 0 | 1 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 0
+PIN | S0 | 64 | 16 | LVCMOS18 | 38 | 5 | 0 | 1 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 0
+PIN | Serial_in | 64 | 16 | LVCMOS18 | 33 | 3 | 0 | 1 | 0 | 4 | 0 | 0
+PIN | clk | 4096 | 16 | LVCMOS18 | 10 | 5 | 0 | 1 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 0
+PIN | reset | 65536 | 16 | LVCMOS18 | 41 | 5 | 0 | 1 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 0
+PIN | Q<0> | 536871040 | 0 | LVCMOS18 | 5
+PIN | Q<1> | 536871040 | 0 | LVCMOS18 | 3
+PIN | Q<2> | 536871040 | 0 | LVCMOS18 | 1
+PIN | Q<3> | 536871040 | 0 | LVCMOS18 | 44
+PIN | Serial_out | 536871040 | 0 | LVCMOS18 | 4

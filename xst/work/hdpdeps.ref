@@ -1,0 +1,8 @@
+V3 3
+FL $XILINX/Universal_Shift_Register/Universal_Shift.vhd 2026/09/30.11:20:27 I.24
+EN work/Universal_Shift 1790747589 FL $XILINX/Universal_Shift_Register/Universal_Shift.vhd \
+      PB ieee/std_logic_1164 1131108373 PB ieee/std_logic_arith 1131108375 \
+      PB ieee/STD_LOGIC_UNSIGNED 1131108379
+AR work/Universal_Shift/Behavioral 1790747590 \
+      FL $XILINX/Universal_Shift_Register/Universal_Shift.vhd \
+      EN work/Universal_Shift 1790747589

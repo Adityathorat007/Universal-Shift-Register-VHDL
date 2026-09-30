@@ -1,0 +1,7 @@
+xst -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -intstyle ise -ifn Universal_Shift.xst -ofn Universal_Shift.syr
+ngdbuild -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -intstyle ise -dd _ngo -i -p acr2 Universal_Shift.ngc Universal_Shift.ngd
+cpldfit -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -intstyle ise -p xa2c*-*-* -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -inreg on -blkfanin 38 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Universal_Shift.ngd
+XSLTProcess -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" Universal_Shift_build.xml
+tsim -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -intstyle ise Universal_Shift Universal_Shift.nga
+taengine -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -intstyle ise -f Universal_Shift -w --format html1 -l C:/Xilinx/Universal_Shift_Register/Universal_Shift_html/tim/timing_report.htm
+hprep6 -ise "C:/Xilinx/Universal_Shift_Register/Universal_Shift_Register" -s IEEE1149 -i Universal_Shift
